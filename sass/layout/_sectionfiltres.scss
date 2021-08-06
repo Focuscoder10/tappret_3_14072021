@@ -1,0 +1,44 @@
+.search__filters {
+    margin-bottom: 50px;
+}
+h2 {
+    margin-top: 40px;
+    padding-left: 20px;
+    @include text-design;
+}
+.search__restaurant{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button__search{
+    display: flex;
+    align-items: center;
+    width: 330px;
+    background-color: $color-primary;
+    border-radius: 20px;
+    position: relative;
+    margin: 10px;
+    > .button__number{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: $color-number;
+        position: absolute;
+        right: 318px;
+        text-align: center;
+        color: white;
+    }
+    > .button__icone > i {
+        padding: 25px;
+        margin-left: 10px;
+        font-size: 18px;
+        opacity: 0.5;
+    }
+    > p{
+        font-size: 18px;
+        font-weight: bold;
+        color: $color-roboto-text;
+        @include text-design;
+    }
+}
