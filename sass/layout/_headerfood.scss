@@ -23,3 +23,13 @@ body {
         margin-bottom: 0;
     }
 }
+@media (min-width: 991.99px) and (max-width: 1220px) {
+    .head__food > .head__icone {
+        flex: 0;
+        margin-left: 40px;
+    }
+    .header__name {
+        text-align: center;
+        margin-right: 20px;
+    }
+}

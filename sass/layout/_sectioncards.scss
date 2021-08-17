@@ -9,22 +9,27 @@
             background-color: white;
             border-radius: 15px;
             margin-top: 20px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.06);
         }
-    }
+        }
 }
+
 .card__image__new {
     height: 175px;
+    position: relative;
     > .card__new__one {
-        position: relative;
-        margin-right: 15px;
-        bottom: 165px;
-        left: 250px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
         width: 80px;
         text-align: center;
         background-color: $color-new;
+        border-radius: 2px;
         > p {
             color: $color-new-text;
-            padding: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            @include text-design;
         }
     }
 }
@@ -60,14 +65,47 @@
             @include text-design;
         }
     }
+    
     > .card__logo {
         display: flex;
         align-items: center;
-        > div {
-            margin-right: 20px;
-            > i {
-                font-size: 20px;
-            }
+        margin: 0;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+    }
+div {
+    margin-right: 20px;
+    position: relative;
+    > .one {
+        color: $color-roboto-text;
+        font-size: 25px;
+        cursor: pointer;
+        background-color: $color-footer-text;
+        overflow: hidden;
+        opacity: 1;
+        &:hover {
+            opacity: 0;
         }
+    }
+    > .two {
+        font-size: 26px;
+        right: 0.5px;
+        bottom: 15.2px;
+        font-weight: bold;
+        color: #c860eb;
+        position: absolute;
+        opacity: 0;
+        height: 50%;
+        &:hover {
+            opacity: 1;
+            transition-duration: 500ms;
+            width: 100%;
+        }
+    }
+    }
+    
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .cards__restaurant > h2 {
+        text-align: center;
     }
 }

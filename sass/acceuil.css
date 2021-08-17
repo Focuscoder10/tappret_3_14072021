@@ -69,16 +69,45 @@ h1 > .header__logo {
   font-size: 15px;
   padding: 15px;
   border: none;
-  background-color: #dd6eda;
+  background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
   color: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.32);
   font-family: "Roboto", sans-serif;
+  position: relative;
+  z-index: 1;
+  /*&::after {
+          opacity: 1;
+      }
+  }
+  &::after {
+      content: "";
+      position: absolute;
+      border-radius: 30px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.52);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: lighten(#fa71cd, 5);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 250ms;
+  }*/
+}
+.navigation__discovery .navigation__button:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.52);
+  opacity: 0.8;
 }
 
+@media (min-width: 991.99px) and (max-width: 1220px) {
+  .navigation__discovery {
+    height: auto;
+  }
+}
 .search__filters {
   margin-bottom: 50px;
 }
-
-h2 {
+.search__filters > h2 {
   margin-top: 40px;
   padding-left: 20px;
   font-family: "Roboto", sans-serif;
@@ -93,11 +122,20 @@ h2 {
 .button__search {
   display: flex;
   align-items: center;
-  width: 330px;
+  width: 90%;
   background-color: #f6f6f6;
   border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 3px 2px rgba(0, 0, 0, 0.02);
   position: relative;
-  margin: 10px;
+  margin: 10px 10px 10px 25px;
+  cursor: pointer;
+}
+.button__search:hover {
+  background-color: #f5edff;
+}
+.button__search:hover .button__icone > i {
+  color: #9356DC;
+  opacity: 1;
 }
 .button__search > .button__number {
   height: 20px;
@@ -105,7 +143,7 @@ h2 {
   border-radius: 50%;
   background-color: #9356DC;
   position: absolute;
-  right: 318px;
+  left: -6px;
   text-align: center;
   color: white;
 }
@@ -114,6 +152,7 @@ h2 {
   margin-left: 10px;
   font-size: 18px;
   opacity: 0.5;
+  cursor: pointer;
 }
 .button__search > p {
   font-size: 18px;
@@ -122,6 +161,38 @@ h2 {
   font-family: "Roboto", sans-serif;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .search__filters > h2 {
+    text-align: center;
+  }
+
+  .search__restaurant > .button__search {
+    width: 80%;
+  }
+}
+@media (min-width: 991.99px) and (max-width: 1220px) {
+  .search__filters > h2 {
+    text-align: center;
+  }
+
+  .search__restaurant > .button__search {
+    width: 60%;
+  }
+
+  .cards__restaurant > h2 {
+    text-align: center;
+  }
+
+  .cards__multi {
+    display: flex;
+    flex-direction: row;
+    padding-right: 0;
+  }
+  .cards__multi > .card {
+    width: 30%;
+    margin: 10px;
+  }
+}
 .cards__restaurant {
   padding: 20px 13px 60px 13px;
   background-color: #f6f6f6;
@@ -134,23 +205,27 @@ h2 {
   background-color: white;
   border-radius: 15px;
   margin-top: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
 }
 
 .card__image__new {
   height: 175px;
+  position: relative;
 }
 .card__image__new > .card__new__one {
-  position: relative;
-  margin-right: 15px;
-  bottom: 165px;
-  left: 250px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   width: 80px;
   text-align: center;
   background-color: #99E2D0;
+  border-radius: 2px;
 }
 .card__image__new > .card__new__one > p {
-  color: #7dd1bc;
-  padding: 5px;
+  color: #408c7a;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 
 .card__link {
@@ -191,14 +266,46 @@ h2 {
 .card__footer > .card__logo {
   display: flex;
   align-items: center;
+  margin: 0;
+  -webkit-animation: name duration timing-function delay iteration-count direction fill-mode;
+          animation: name duration timing-function delay iteration-count direction fill-mode;
 }
-.card__footer > .card__logo > div {
+.card__footer div {
   margin-right: 20px;
+  position: relative;
 }
-.card__footer > .card__logo > div > i {
-  font-size: 20px;
+.card__footer div > .one {
+  color: #000000;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: #ffffff;
+  overflow: hidden;
+  opacity: 1;
+}
+.card__footer div > .one:hover {
+  opacity: 0;
+}
+.card__footer div > .two {
+  font-size: 26px;
+  right: 0.5px;
+  bottom: 15.2px;
+  font-weight: bold;
+  color: #c860eb;
+  position: absolute;
+  opacity: 0;
+  height: 50%;
+}
+.card__footer div > .two:hover {
+  opacity: 1;
+  transition-duration: 500ms;
+  width: 100%;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cards__restaurant > h2 {
+    text-align: center;
+  }
+}
 footer {
   background-color: #353535;
 }
@@ -229,4 +336,20 @@ p {
 .foot__iconedirect > i {
   color: #ffffff;
   font-size: 12px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media (min-width: 991.99px) and (max-width: 1220px) {
+  .foot__contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .foot__contact > .foot__index {
+    margin: 0;
+  }
 }/*# sourceMappingURL=acceuil.css.map */

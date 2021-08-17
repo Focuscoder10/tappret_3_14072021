@@ -25,3 +25,18 @@ p {
     color: $color-footer-text;
     font-size: 12px;
 }
+a {
+    color: $color-footer-text;
+    text-decoration: none;
+}
+
+@media (min-width: 991.99px) and (max-width: 1220px) {
+    .foot__contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        > .foot__index {
+            margin: 0;
+        }
+    }
+}
