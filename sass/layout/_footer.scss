@@ -1,42 +1,42 @@
 footer {
-    background-color: $color-footer;
+  background-color: $color-footer;
 }
 .foot__index {
-    margin-top: 0;
-    @include title-design;
-    color: $color-footer-text;
-    margin-bottom: 10px;
+  margin-top: 0;
+  @include title-design;
+  color: $color-footer-text;
+  margin-bottom: 10px;
 }
 p {
-    margin: 5px;
-    color: $color-footer-text;
+  margin: 5px;
+  color: $color-footer-text;
 }
 .foot__contact {
-    padding: 20px;
-    > .foot__icone{
-        display: flex;
-        }
-        > div {
-            display: flex;
-            align-items: center;
-        }
+  padding: 20px;
+  > .foot__icone {
+    display: flex;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+  }
 }
 .foot__iconedirect > i {
-    color: $color-footer-text;
-    font-size: 12px;
+  color: $color-footer-text;
+  font-size: 12px;
 }
 a {
-    color: $color-footer-text;
-    text-decoration: none;
+  color: $color-footer-text;
+  text-decoration: none;
 }
 
 @media (min-width: 991.99px) and (max-width: 1220px) {
-    .foot__contact {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        > .foot__index {
-            margin: 0;
-        }
+  .foot__contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > .foot__index {
+      margin: 0;
     }
+  }
 }

@@ -1,0 +1,9 @@
+body {
+  @include text-design;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) {
+  body {
+    width: 1220px;
+  }
+}

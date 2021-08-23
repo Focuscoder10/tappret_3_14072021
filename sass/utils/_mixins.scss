@@ -4,3 +4,9 @@
 @mixin title-design {
     font-family: 'Shrikhand', cursive;
 }
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

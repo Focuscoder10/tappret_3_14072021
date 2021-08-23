@@ -1,7 +1,13 @@
 body {
-  margin: 0;
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
 }
 
+@media (min-width: 1300px) {
+  body {
+    width: 1220px;
+  }
+}
 .head__food {
   display: flex;
 }
@@ -17,11 +23,11 @@ body {
   color: black;
 }
 
-.header__name {
+.head__name {
   flex: 3;
   margin-bottom: 0;
 }
-.header__name > .header__logo {
+.head__name > .head__logo {
   padding: 15px;
   width: 175px;
   margin-bottom: 0;
@@ -33,7 +39,7 @@ body {
     margin-left: 40px;
   }
 
-  .header__name {
+  .head__name {
     text-align: center;
     margin-right: 20px;
   }
@@ -92,8 +98,7 @@ a {
 .pic__food > img {
   height: 250px;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -112,15 +117,11 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.food__name > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 30px;
+
+div {
   position: relative;
 }
-
-.one {
+div > .one {
   color: #000000;
   font-size: 25px;
   cursor: pointer;
@@ -128,21 +129,19 @@ a {
   overflow: hidden;
   opacity: 1;
 }
-.one:hover {
+div > .one:hover {
   opacity: 0;
 }
-
-.two {
-  font-size: 26px;
-  right: 0.5px;
-  bottom: 13.2px;
+div > .two {
+  font-size: 26.5px;
+  right: 0.4px;
   font-weight: bold;
   color: #c860eb;
   position: absolute;
   opacity: 0;
   height: 50%;
 }
-.two:hover {
+div > .two:hover {
   opacity: 1;
   transition-duration: 500ms;
   width: 100%;
@@ -154,8 +153,26 @@ a {
   font-weight: inherit;
   font-size: 18px;
   opacity: 0.6;
+  margin-bottom: 5px;
+}
+.box__type + .contain__line {
+  height: 3px;
+}
+.box__type + .contain__line > .line__under__boxtype {
+  height: 3px;
+  background-color: #99e2d0;
+  width: 45px;
+  animation: shake-line 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 4;
 }
 
+@keyframes shake-line {
+  0% {
+    transform: translateX(3%);
+  }
+  100% {
+    transform: translateX(-9%);
+  }
+}
 .box__menu {
   display: flex;
   flex-direction: column;
@@ -173,22 +190,28 @@ a {
   width: 100%;
   margin-top: 15px;
   border-radius: 15px;
-  display: flex;
   position: relative;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
 }
 .box__button:hover .box__slide {
   width: 20%;
   transition: width 600ms ease-in-out;
-  height: 70px;
+  height: 72px;
   border-radius: 0px 10px 10px 0px;
 }
 .box__button:hover .box__slide .check {
   opacity: 1;
-  rotate: 360deg;
-  transition: rotate 600ms ease-in-out;
+  animation: spin-check 200ms linear 200ms 1 forwards;
 }
 
+@keyframes spin-check {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .box__title__food {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -221,18 +244,10 @@ a {
   justify-content: center;
 }
 .box__slide > .check {
+  transition: opacity 0.5s;
   opacity: 0;
   color: white;
   font-size: 25px;
-}
-
-@-webkit-keyframes slide-box {
-  0% {
-    transform: translateY(5vh);
-  }
-  100% {
-    transform: translateY(0px);
-  }
 }
 
 @keyframes slide-box {
@@ -243,33 +258,20 @@ a {
     transform: translateY(0px);
   }
 }
-.plate__one {
-  -webkit-animation: trans-box 1000ms ease-in 0ms 1, slide-box 1000ms ease-in 0ms;
-          animation: trans-box 1000ms ease-in 0ms 1, slide-box 1000ms ease-in 0ms;
+.anim-diff > * {
+  opacity: 0;
 }
-
-.plate__two {
-  -webkit-animation: trans-box 2000ms ease-in 0ms 1, slide-box 2000ms ease-in 0ms;
-          animation: trans-box 2000ms ease-in 0ms 1, slide-box 2000ms ease-in 0ms;
+.anim-diff > :nth-child(1) {
+  animation: trans-box 0.3s ease-out 0.15s forwards, slide-box 0.3s ease-out 0.15s forwards;
 }
-
-.plate__tree {
-  -webkit-animation: trans-box 2500ms ease-in 0ms 1, slide-box 2500ms ease-in 0ms;
-          animation: trans-box 2500ms ease-in 0ms 1, slide-box 2500ms ease-in 0ms;
+.anim-diff > :nth-child(2) {
+  animation: trans-box 0.3s ease-out 0.3s forwards, slide-box 0.6s ease-out 0.3s forwards;
 }
-
-.plate__four {
-  -webkit-animation: trans-box 3000ms ease-in 0ms 1, slide-box 3000ms ease-in 0ms;
-          animation: trans-box 3000ms ease-in 0ms 1, slide-box 3000ms ease-in 0ms;
+.anim-diff > :nth-child(3) {
+  animation: trans-box 0.3s ease-out 0.45s forwards, slide-box 0.9s ease-out 0.45s forwards;
 }
-
-@-webkit-keyframes trans-box {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.anim-diff > :nth-child(4) {
+  animation: trans-box 0.3s ease-out 0.6s forwards, slide-box 1.2s ease-out 0.6s forwards;
 }
 
 @keyframes trans-box {
@@ -278,25 +280,6 @@ a {
   }
   to {
     opacity: 1;
-  }
-}
-/*.test__slide {
-    height: 100%;
-    width: 100px;
-    position: absolute;
-    border-radius: 0px 20px 20px 0px;
-    right: 0px;
-    &:hover {
-        animation: slide 500ms linear 0ms 1;
-        background-color: green;
-    }
-}*/
-@-webkit-keyframes slide {
-  0% {
-    transform: translate(90px, 0px);
-  }
-  100% {
-    transform: translate(0px, 0px);
   }
 }
 @keyframes slide {
@@ -334,26 +317,26 @@ a {
   font-size: 15px;
   padding: 15px;
   border: none;
-  background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+  background-image: linear-gradient(#c471f5, #fa71cd);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.32);
   color: white;
   font-family: "Roboto", sans-serif;
   position: relative;
   z-index: 1;
   /*&::after {
-      content: "";
-      position: absolute;
-      border-radius: 30px;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.52);
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: lighten(#fa71cd, 5);
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 250ms;
-  }*/
+          content: "";
+          position: absolute;
+          border-radius: 30px;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.52);
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: lighten(#fa71cd, 5);
+          opacity: 0;
+          z-index: -1;
+          transition: opacity 250ms;
+      }*/
 }
 .order__box > .order__button:hover {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.52);
@@ -365,18 +348,20 @@ a {
     flex: 1;
   }
 
-  .header__logo {
+  .head__logo {
     margin-left: 50px;
   }
 
-  .header__name {
+  .head__name {
     flex: 2;
     text-align: inherit;
   }
 
-  /*.food__name > h1 {
+  .contain__line {
+    display: flex;
+    justify-content: center;
+  }
 
-  }*/
   .box__type {
     text-align: center;
   }
@@ -386,7 +371,7 @@ a {
   }
 }
 @media (min-width: 991.99px) and (max-width: 1220px) {
-  .food__name > h1 {
+  .food__name > h2 {
     flex: 1;
     text-align: center;
     margin-right: 0px;
@@ -395,6 +380,11 @@ a {
 
   .box__type {
     text-align: center;
+  }
+
+  .contain__line {
+    display: flex;
+    justify-content: center;
   }
 
   .box__menu > .box__button {

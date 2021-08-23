@@ -1,83 +1,83 @@
 .search__filters {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 
-    > h2 {
-        margin-top: 40px;
-        padding-left: 20px;
-        @include text-design;
+  > h2 {
+    margin-top: 40px;
+    padding-left: 20px;
+    @include text-design;
+  }
+}
+.search__restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button__search {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  background-color: $color-primary;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12), 0 3px 2px rgba(0, 0, 0, 0.02);
+  position: relative;
+  margin: 10px 10px 10px 25px;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-filtres-end;
+    .button__icone > i {
+      color: $color-number;
+      opacity: 1;
     }
-}
-.search__restaurant{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.button__search{
-    display: flex;
-    align-items: center;
-    width: 90%;
-    background-color: $color-primary;
-    border-radius: 20px;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 3px 2px rgba(0,0,0,0.02);
-    position: relative;
-    margin: 10px 10px 10px 25px;
+  }
+  > .button__number {
+    $size: 22px;
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+    background-color: $color-number;
+    position: absolute;
+    left: -$size / 2;
+    color: white;
+    @include flex-center;
+  }
+  > .button__icone > i {
+    padding: 25px;
+    margin-left: 10px;
+    font-size: 18px;
+    opacity: 0.5;
     cursor: pointer;
-    &:hover {
-        background-color: $color-filtres-end;
-        .button__icone > i {
-            color: $color-number;
-            opacity: 1;
-        }
-    }
-    > .button__number{
-        height: 20px;
-        width: 20px;
-        border-radius: 50%;
-        background-color: $color-number;
-        position: absolute;
-        left: -6px;
-        text-align: center;
-        color: white;
-    }
-    > .button__icone > i {
-        padding: 25px;
-        margin-left: 10px;
-        font-size: 18px;
-        opacity: 0.5;
-        cursor: pointer;
-    }
-    > p{
-        font-size: 18px;
-        font-weight: bold;
-        color: $color-roboto-text;
-        @include text-design;
-    }
+  }
+  > p {
+    font-size: 18px;
+    font-weight: bold;
+    color: $color-roboto-text;
+    @include text-design;
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-.search__filters > h2 {
+  .search__filters > h2 {
     text-align: center;
-}
-.search__restaurant > .button__search {
+  }
+  .search__restaurant > .button__search {
     width: 80%;
+  }
 }
-}
-@media (min-width: 991.99px) and (max-width: 1220px) {
-    .search__filters > h2 {
-        text-align: center;
+@media (min-width: 991.99px) {
+  .search__filters > h2 {
+    text-align: center;
+  }
+  .search__restaurant > .button__search {
+    width: 60%;
+  }
+  .cards__restaurant > h2 {
+    text-align: center;
+  }
+  .cards__multi {
+    display: flex;
+    padding-right: 0;
+    > .card {
+      width: 30%;
+      margin: 10px;
     }
-    .search__restaurant > .button__search {
-        width: 60%;
-    }
-    .cards__restaurant > h2 {
-        text-align: center;
-    }
-    .cards__multi {
-        display: flex;
-        flex-direction: row;
-        padding-right: 0;
-        >.card {
-            width: 30%;
-            margin: 10px;
-        }
-    }
+  }
 }
