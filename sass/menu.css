@@ -34,7 +34,7 @@ body {
   margin-bottom: 0;
 }
 
-@media (min-width: 991.99px) and (max-width: 1220px) {
+@media (min-width: 991.99px) and (max-width: 2200px) {
   .head__food > .head__icone {
     flex: 0;
     margin-left: 40px;
@@ -198,18 +198,16 @@ div > .two:hover {
   border-radius: 15px;
   position: relative;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
-  /*&:hover {
-    .box__slide {
-      width: 20%;
-      transition: width 600ms ease-in-out;
-      height: 72px;
-      border-radius: 0px 10px 10px 0px;
-      .check {
-        opacity: 1;
-        animation: spin-check 200ms linear 200ms 1 forwards;
-      }
-    }
-  }*/
+}
+.box__button:hover .box__slide {
+  width: 20%;
+  transition: width 600ms ease-in-out;
+  height: 72px;
+  border-radius: 0px 10px 10px 0px;
+}
+.box__button:hover .box__slide .check {
+  opacity: 1;
+  animation: spin-check 200ms linear 200ms 1 forwards;
 }
 
 @keyframes spin-check {
@@ -258,7 +256,6 @@ div > .two:hover {
   opacity: 0;
   color: white;
   font-size: 25px;
-  animation: spin-check 200ms linear 200ms 1 forwards;
 }
 
 @keyframes slide-box {
@@ -270,19 +267,19 @@ div > .two:hover {
   }
 }
 .plate__one {
-  animation: trans-box 1000ms ease-in 0ms 1, slide-box 1000ms ease-in 0ms;
+  animation: trans-box 600ms ease-in 0ms 1, slide-box 600ms ease-in 0ms;
 }
 
 .plate__two {
-  animation: trans-box 2000ms ease-in 0ms 1, slide-box 2000ms ease-in 0ms;
+  animation: trans-box 1200ms ease-in 0ms 1, slide-box 1200ms ease-in 0ms;
 }
 
 .plate__tree {
-  animation: trans-box 2500ms ease-in 0ms 1, slide-box 2500ms ease-in 0ms;
+  animation: trans-box 1800ms ease-in 0ms 1, slide-box 1800ms ease-in 0ms;
 }
 
 .plate__four {
-  animation: trans-box 3000ms ease-in 0ms 1, slide-box 3000ms ease-in 0ms;
+  animation: trans-box 2200ms ease-in 0ms 1, slide-box 2200ms ease-in 0ms;
 }
 
 @keyframes trans-box {
