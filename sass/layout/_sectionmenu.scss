@@ -89,7 +89,7 @@ div {                      /* div contenant les coeurs animés, ainsi que ces de
   z-index: 0;
 }
 
-.box__button {                   /* boutons de plats avec sa slide verte de validation*/
+.box__button {                   
   background-color: $color-footer-text;
   display: flex;
   justify-content: space-between;
@@ -99,7 +99,7 @@ div {                      /* div contenant les coeurs animés, ainsi que ces de
   border-radius: 15px;
   position: relative;
   box-shadow: 0 5px 5px rgb(black, 0.06);
-  /*&:hover {
+     /*&:hover {
     .box__slide {
       width: 20%;
       transition: width 600ms ease-in-out;
@@ -141,7 +141,7 @@ div {                      /* div contenant les coeurs animés, ainsi que ces de
     overflow: hidden;
   }
 }
-.box__slide {
+.box__slide {                           /*slide verte de validation*/
   background-color: #99e2d0;
   width: 0px;
   transition: width 600ms ease-in-out;
@@ -154,6 +154,7 @@ div {                      /* div contenant les coeurs animés, ainsi que ces de
     opacity: 0;
     color: white;
     font-size: 25px;
+    animation: spin-check 200ms linear 200ms 1 forwards;
   }
 }
 @keyframes slide-box {
@@ -165,30 +166,18 @@ div {                      /* div contenant les coeurs animés, ainsi que ces de
   }
 }
 
-.anim-diff {                      /* animation des boutons selections des plats*/
-  $diff: 0.3s;
-  > * {
-    opacity: 0;
+   .plate__one {
+     animation: trans-box 1000ms ease-in 0ms 1, slide-box 1000ms ease-in 0ms;
+   }
+   .plate__two {
+     animation: trans-box 2000ms ease-in 0ms 1, slide-box 2000ms ease-in 0ms;
+   }
+   .plate__tree {
+     animation: trans-box 2500ms ease-in 0ms 1, slide-box 2500ms ease-in 0ms;
+   }
+   .plate__four {
+     animation: trans-box 3000ms ease-in 0ms 1, slide-box 3000ms ease-in 0ms;
   }
-  @for $i from 1 through 4 {
-    > :nth-child(#{$i}) {
-      animation: trans-box $diff ease-out $i * $diff / 2 forwards,
-        slide-box $i * $diff ease-out $i * $diff / 2 forwards;
-    }
-  }
-}
-// .plate__one {
-//   animation: trans-box 1000ms ease-in 0ms 1, slide-box 1000ms ease-in 0ms;
-// }
-// .plate__two {
-//   animation: trans-box 2000ms ease-in 0ms 1, slide-box 2000ms ease-in 0ms;
-// }
-// .plate__tree {
-//   animation: trans-box 2500ms ease-in 0ms 1, slide-box 2500ms ease-in 0ms;
-// }
-// .plate__four {
-//   animation: trans-box 3000ms ease-in 0ms 1, slide-box 3000ms ease-in 0ms;
-// }
 @keyframes trans-box {
   from {
     opacity: 0;

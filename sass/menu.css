@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
@@ -103,6 +104,7 @@ a {
 }
 
 .food__menu__general {
+  /* ensemble conprenant les menus et intitulés entrées, plats, desserts.*/
   background-color: #f6f6f6;
   padding: 20px;
   border-radius: 40px 40px 0px 0px;
@@ -112,6 +114,7 @@ a {
 }
 
 .food__name {
+  /*nom du restaurant*/
   font-family: "Shrikhand", cursive;
   font-size: 20px;
   display: flex;
@@ -119,6 +122,7 @@ a {
 }
 
 div {
+  /* div contenant les coeurs animés, ainsi que ces derniers */
   position: relative;
 }
 div > .one {
@@ -148,6 +152,7 @@ div > .two:hover {
 }
 
 .box__type {
+  /*types de plats et barre verte décorative du dessous*/
   font-family: "Roboto", sans-serif;
   color: #000000;
   font-weight: inherit;
@@ -174,6 +179,7 @@ div > .two:hover {
   }
 }
 .box__menu {
+  /* boites contenant chacunes les plats */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -192,16 +198,18 @@ div > .two:hover {
   border-radius: 15px;
   position: relative;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
-}
-.box__button:hover .box__slide {
-  width: 20%;
-  transition: width 600ms ease-in-out;
-  height: 72px;
-  border-radius: 0px 10px 10px 0px;
-}
-.box__button:hover .box__slide .check {
-  opacity: 1;
-  animation: spin-check 200ms linear 200ms 1 forwards;
+  /*&:hover {
+    .box__slide {
+      width: 20%;
+      transition: width 600ms ease-in-out;
+      height: 72px;
+      border-radius: 0px 10px 10px 0px;
+      .check {
+        opacity: 1;
+        animation: spin-check 200ms linear 200ms 1 forwards;
+      }
+    }
+  }*/
 }
 
 @keyframes spin-check {
@@ -213,6 +221,7 @@ div > .two:hover {
   }
 }
 .box__title__food {
+  /* noms et descriptifs des plats*/
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -235,6 +244,7 @@ div > .two:hover {
 }
 
 .box__slide {
+  /*slide verte de validation*/
   background-color: #99e2d0;
   width: 0px;
   transition: width 600ms ease-in-out;
@@ -248,6 +258,7 @@ div > .two:hover {
   opacity: 0;
   color: white;
   font-size: 25px;
+  animation: spin-check 200ms linear 200ms 1 forwards;
 }
 
 @keyframes slide-box {
@@ -258,20 +269,20 @@ div > .two:hover {
     transform: translateY(0px);
   }
 }
-.anim-diff > * {
-  opacity: 0;
+.plate__one {
+  animation: trans-box 1000ms ease-in 0ms 1, slide-box 1000ms ease-in 0ms;
 }
-.anim-diff > :nth-child(1) {
-  animation: trans-box 0.3s ease-out 0.15s forwards, slide-box 0.3s ease-out 0.15s forwards;
+
+.plate__two {
+  animation: trans-box 2000ms ease-in 0ms 1, slide-box 2000ms ease-in 0ms;
 }
-.anim-diff > :nth-child(2) {
-  animation: trans-box 0.3s ease-out 0.3s forwards, slide-box 0.6s ease-out 0.3s forwards;
+
+.plate__tree {
+  animation: trans-box 2500ms ease-in 0ms 1, slide-box 2500ms ease-in 0ms;
 }
-.anim-diff > :nth-child(3) {
-  animation: trans-box 0.3s ease-out 0.45s forwards, slide-box 0.9s ease-out 0.45s forwards;
-}
-.anim-diff > :nth-child(4) {
-  animation: trans-box 0.3s ease-out 0.6s forwards, slide-box 1.2s ease-out 0.6s forwards;
+
+.plate__four {
+  animation: trans-box 3000ms ease-in 0ms 1, slide-box 3000ms ease-in 0ms;
 }
 
 @keyframes trans-box {
@@ -291,6 +302,7 @@ div > .two:hover {
   }
 }
 .box__price {
+  /*boite prix des plats*/
   margin-right: 20px;
   display: flex;
   align-items: flex-end;
@@ -309,6 +321,7 @@ div > .two:hover {
 }
 
 .order__box {
+  /*bouton commander en bas de page*/
   text-align: center;
 }
 .order__box > .order__button {
