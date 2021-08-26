@@ -80,21 +80,21 @@
       font-size: 25px;
       cursor: pointer;
       background-color: $color-footer-text;
-      overflow: hidden;
       opacity: 1;
       &:hover {
         opacity: 0;
       }
     }
     > .two {
-      font-size: 26.5px;
-      right: 0.5px;
-      bottom: 15.2px;
-      font-weight: bold;
-      color: #c860eb;
+      font-size: 25px;
+      right: 0px;
+      bottom: 1px;
+      /*font-weight: bold;*/
       position: absolute;
       opacity: 0;
-      height: 50%;
+      background-image: linear-gradient(#c471f5, #fa71cd);
+      background-clip: text;
+      color: transparent;
       &:hover {
         opacity: 1;
         transition-duration: 500ms;

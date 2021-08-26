@@ -32,7 +32,6 @@ h1 > .head__logo {
   align-items: center;
   top: 0;
   left: 0;
-  overflow: hidden;
   background-color: whitesmoke;
   animation: gost 0.5s linear 2s forwards;
 }
@@ -40,7 +39,6 @@ h1 > .head__logo {
 #loader {
   position: absolute;
   z-index: 1000;
-  overflow: hidden;
   width: 200px;
   height: 200px;
   border: 20px solid #cccccc;
@@ -335,21 +333,21 @@ h1 > .head__logo {
   font-size: 25px;
   cursor: pointer;
   background-color: #ffffff;
-  overflow: hidden;
   opacity: 1;
 }
 .card__footer div > .one:hover {
   opacity: 0;
 }
 .card__footer div > .two {
-  font-size: 26.5px;
-  right: 0.5px;
-  bottom: 15.2px;
-  font-weight: bold;
-  color: #c860eb;
+  font-size: 25px;
+  right: 0px;
+  bottom: 1px;
+  /*font-weight: bold;*/
   position: absolute;
   opacity: 0;
-  height: 50%;
+  background-image: linear-gradient(#c471f5, #fa71cd);
+  background-clip: text;
+  color: transparent;
 }
 .card__footer div > .two:hover {
   opacity: 1;

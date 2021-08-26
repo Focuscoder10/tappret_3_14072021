@@ -127,23 +127,23 @@ div {
 }
 div > .one {
   color: #000000;
-  font-size: 25px;
+  font-size: 24px;
   cursor: pointer;
   background-color: #f6f6f6;
-  overflow: hidden;
   opacity: 1;
 }
 div > .one:hover {
   opacity: 0;
 }
 div > .two {
-  font-size: 26.5px;
-  right: 0.4px;
+  font-size: 24px;
+  right: 0px;
   font-weight: bold;
-  color: #c860eb;
   position: absolute;
   opacity: 0;
-  height: 50%;
+  background-image: linear-gradient(#c471f5, #fa71cd);
+  background-clip: text;
+  color: transparent;
 }
 div > .two:hover {
   opacity: 1;
@@ -167,15 +167,15 @@ div > .two:hover {
   height: 3px;
   background-color: #99e2d0;
   width: 45px;
-  animation: shake-line 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 4;
+  animation: shake-line 150ms linear 3;
 }
 
 @keyframes shake-line {
   0% {
-    transform: translateX(3%);
+    transform: translateX(4%);
   }
   100% {
-    transform: translateX(-9%);
+    transform: translateX(-12%);
   }
 }
 .box__menu {
@@ -245,7 +245,7 @@ div > .two:hover {
   /*slide verte de validation*/
   background-color: #99e2d0;
   width: 0px;
-  transition: width 600ms ease-in-out;
+  /*transition: width 600ms ease-in-out;*/
   border-radius: 0px 10px 10px 0px;
   display: flex;
   align-items: center;

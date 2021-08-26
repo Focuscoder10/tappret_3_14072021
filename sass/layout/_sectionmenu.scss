@@ -33,23 +33,23 @@ div {
   position: relative;
   > .one {
     color: $color-roboto-text;
-    font-size: 25px;
+    font-size: 24px;
     cursor: pointer;
     background-color: $color-primary;
-    overflow: hidden;
     opacity: 1;
     &:hover {
       opacity: 0;
     }
   }
   > .two {
-    font-size: 26.5px;
-    right: 0.4px;
+    font-size: 24px;
+    right: 0px;
     font-weight: bold;
-    color: #c860eb;
     position: absolute;
     opacity: 0;
-    height: 50%;
+    background-image: linear-gradient(#c471f5, #fa71cd);
+    background-clip: text;
+    color: transparent;
     &:hover {
       opacity: 1;
       transition-duration: 500ms;
@@ -71,7 +71,7 @@ div {
       height: 3px;
       background-color: $color-slide;
       width: 45px;
-      animation: shake-line 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 4;
+      animation: shake-line 150ms linear 3;
     }
   }
 }
@@ -151,7 +151,7 @@ div {
   /*slide verte de validation*/
   background-color: #99e2d0;
   width: 0px;
-  transition: width 600ms ease-in-out;
+  /*transition: width 600ms ease-in-out;*/
   border-radius: 0px 10px 10px 0px;
   display: flex;
   align-items: center;
