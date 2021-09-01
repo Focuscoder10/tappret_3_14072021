@@ -89,9 +89,8 @@ h1 > .head__logo {
   background-color: #eaeaea;
   outline: none;
   border-radius: 4px;
-  background-color: #eaeaea;
   padding: 4px;
-  border: 1px solid #eaeaea;
+  border: 1px solid transparent;
   transition: border-color 0.3s, background-color 0.3s;
 }
 .place__search > .place__text > input:focus {
@@ -346,7 +345,7 @@ h1 > .head__logo {
   position: absolute;
   opacity: 0;
   background-image: linear-gradient(#c471f5, #fa71cd);
-  background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
 }
 .card__footer div > .two:hover {

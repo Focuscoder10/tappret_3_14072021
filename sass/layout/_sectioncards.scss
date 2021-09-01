@@ -93,7 +93,7 @@
       position: absolute;
       opacity: 0;
       background-image: linear-gradient(#c471f5, #fa71cd);
-      background-clip: text;
+      -webkit-background-clip: text;
       color: transparent;
       &:hover {
         opacity: 1;

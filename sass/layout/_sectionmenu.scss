@@ -48,7 +48,7 @@ div {
     position: absolute;
     opacity: 0;
     background-image: linear-gradient(#c471f5, #fa71cd);
-    background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
     &:hover {
       opacity: 1;
@@ -130,7 +130,7 @@ div {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 270px;
+  width: 300px;
   margin-left: 10px;
   margin-right: 1rem;
   > h3 {
@@ -202,7 +202,7 @@ div {
 }
 .box__price {
   /*boite prix des plats*/
-  margin-right: 20px;
+  margin-right: 15px;
   display: flex;
   align-items: flex-end;
   > .box__price__euros {
@@ -211,7 +211,6 @@ div {
     font-weight: 100 !important;
     margin-top: 35px;
     margin-bottom: 0.5rem;
-    margin-left: 2rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
